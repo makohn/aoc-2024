@@ -19,3 +19,7 @@ fun String.md5() = BigInteger(1, MessageDigest.getInstance("MD5").digest(toByteA
  * The cleaner shorthand for printing output.
  */
 fun Any?.println() = println(this)
+
+typealias CharMatrix = Array<CharArray>
+fun List<String>.toCharMatrix() = Array(size) { idx -> get(idx).toCharArray() }
+val CharMatrix.dimension get() = size to get(0).size
